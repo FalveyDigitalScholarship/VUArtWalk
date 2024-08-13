@@ -1,8 +1,8 @@
 ﻿Setting,Customize,Hints,Examples
 Storymap Info,,,
-Storymap Title,Villanova University Art Walk,,
+Storymap Title,,,
 Storymap Subtitle,,,
-Storymap Logo,,Path to a logo image,
+Storymap Logo,media/logo/ARTWALK10.png,Path to a logo image,
 Map Settings,,,
 Basemap Tiles,MapBox,Drop-down menu for background basemap tiles,https://leaflet-extras.github.io/leaflet-providers/preview/
 Zoom Controls,bottomright,,

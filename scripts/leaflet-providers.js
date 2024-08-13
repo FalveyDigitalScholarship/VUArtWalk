@@ -216,7 +216,7 @@
 			}
 		},
 		MapBox: {
-			url: 'https://api.mapbox.com/styles/v1/jvillanova/clvv6ivtc063001pe890b56go/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoianZpbGxhbm92YSIsImEiOiJjbHVsamR4ZngxNGZvMmtuejg3bDJiMDI0In0.NLgH2MBbsD8RT-MrjZ0keg',
+			url: 'https://api.mapbox.com/styles/v1/jvillanova/clzbezcmg000j01qpdpxkerpe/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoianZpbGxhbm92YSIsImEiOiJjbHVsamR4ZngxNGZvMmtuejg3bDJiMDI0In0.NLgH2MBbsD8RT-MrjZ0keg',
 			options: {
 				attribution:
 					'Imagery from <a href="http://mapbox.com/about/maps/">MapBox</a> &mdash; ' +

@@ -9,7 +9,7 @@
                 popupAnchor: [1, -32],
                 shadowAnchor: [10, 12],
                 shadowSize: [36, 16],
-                className: "extra-marker-painting", "extra-marker-sculpture", "extra-marker-religious",
+                className: "extra-marker-painting",
                 prefix: "",
                 extraClasses: "",
                 shape: "circle",
@@ -48,7 +48,7 @@
                 return this._setIconStyles(a, "shadow"), a;
             },
         })),
-        (L.ExtraMarkers.icon = function (a) {
-            return new L.ExtraMarkers.Icon(a);
+        (L.ArtMarkers.icon = function (a) {
+            return new L.ArtMarkers.Icon(a);
         });
 })(this, document);

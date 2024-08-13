@@ -1,8 +1,11 @@
 body {
   padding: 0px;
   margin: 0px;
-  font-family: "Optima";
   overflow: hidden;
+  font-family: 'Lato', sans-serif;
+  font-weight: 250;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 #map {
@@ -29,11 +32,14 @@ body {
   height: 100%; /* Adjust to fit max Description length, one setting for all; alternative is 100% */
   overflow-y: scroll;
   overflow-x: hidden;
+  background-color: #4b687b;
 }
 
 #top {
-  height: 40px;
-  margin: 0;
+  /*height: 40px;
+  margin: 0;*/
+  height: 15px;
+  margin-top: 350px;
 }
 
 #space-at-the-bottom {
@@ -61,7 +67,7 @@ body {
 .chapter-container {
   /* margin + padding = chapterContainerMargin in script.js */
   /* Important for scrolling! */
-  margin: 50px 0 0 0;
+  /*margin: 50px 0 0 0;*/
   padding: 20px 0 0 0;
   text-align: center;
 }
@@ -102,16 +108,19 @@ body {
   font-size: 1.2em;
   font-weight: bold;
   padding: 0 5px;
+  color: #ffff;
   }
 
 .source {
-  font-size: 11pt;
+  font-size: 10pt;
   font-style: italic;
-  color: gray;
+  color: #cfd0cf;
+
 }
 a.source, a.source:visited {
-  color: grey;
+  color: #cfd0cf;
   font-style: italic;
+
 }
 
 
@@ -123,6 +132,10 @@ a.source, a.source:visited {
   text-align: left;
   font-size: 12pt;
   padding: 20px;
+  text-align: left;
+  font-size: 12pt;
+  padding: 20px;
+  color: #ffff;
 }
 
 
@@ -130,6 +143,7 @@ a.source, a.source:visited {
 
 .in-focus {
   opacity: 1.0;
+  background-color: #4b687b;
 }
 
 .out-focus {
@@ -153,7 +167,8 @@ a.source, a.source:visited {
 }
 
 a.source, a.source:visited {
-  color: grey;
+  color: #ffff;
+  font-weight: strong;
   font-style: italic;
 }
 
@@ -167,8 +182,9 @@ img.logo {
   max-height: 100%;
   max-width: 100%;
   vertical-align: middle;
-  height: 80px;
-  padding: 30px;
+  /*height: 80px;*/
+  /*padding: 30px;*/
+  background-color: #4b687b;
 
 }
 
@@ -176,7 +192,8 @@ img.logo {
 #header {
   padding: 5px 0;
   text-align: center;
-  color: #333;
+  color: black;
+  background-color: #4b687b;;
 }
 
 /* Storymap title & subtitle */

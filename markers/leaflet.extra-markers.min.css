@@ -25,15 +25,30 @@
 }
 
 .extra-marker-painting {
-  background: url("images/painting.png") no-repeat 0 0;
+  background: url("images/painting3.png") no-repeat 0 0;
+  background-size: cover;
+  background-position: 0, 0 !important;
+  margin: 0 0 0 0 !important;
+  width: 30px !important;
+  height: 45px !important;
 }
 
 .extra-marker-religious {
-  background: url("images/religious.png") no-repeat 0 0;
+  background: url("images/religious3.png") no-repeat 0 0;
+  background-size: cover;
+  background-position: 0, 0 !important;
+  margin: 0 0 0 0 !important;
+  width: 30px !important;
+  height: 45px !important;
 }
 
 .extra-marker-sculpture {
-  background: url("images/sculpture.png") no-repeat 0 0;
+  background: url("images/sculpture3.png") no-repeat 0 0;
+  background-size: cover;
+  background-position: 0, 0 !important;
+  margin: 0 0 0 0 !important;
+  width: 30px !important;
+  height: 45px !important;
 }
 
 

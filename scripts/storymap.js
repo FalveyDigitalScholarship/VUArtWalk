@@ -105,9 +105,9 @@ $(window).on('load', function () {
 
     // Add logo
     if (getSetting('_mapLogo')) {
-      $('#header').append('<a href="https://kensingtonremembers.org/"><img class="logo" src="' + getSetting('_mapLogo') + '" /></a>')
+      $('#header').append('<img class="logo" src="' + getSetting('_mapLogo') + '" />')
       //$('#logo').append('<img src="' + getSetting('_mapLogo') + '" />');
-      $('#top').css('height', '80px');
+      $('#top').css('height', '15px');
     } else {
       $('.logo').css('display', 'none');
       //$('#header').css('padding-top', '25px');
@@ -155,12 +155,18 @@ $(window).on('load', function () {
 
         chapterCount += 1;
 
+        className = "extra-marker-painting";
+        if (c['Marker'] === "Sculpture") className = "extra-marker-sculpture";
+        else if (c['Marker'] === "Religious") className = "extra-marker-religious";
+        else if (c['Marker'] === "Gallery") className = "extra-marker-gallery";
+
         markers.push(
           L.marker([lat, lon], {
             icon: L.ArtMarkers.icon({
               icon: 'fa-number',
               number: c['Marker'] === 'Plain' ? '' : chapterCount,
-              markerColor: c['Marker Color'] || 'blue'
+              markerColor: c['Marker Color'] || 'blue',
+              className: className || "extra-marker-painting"
             }),
             opacity: c['Marker'] === 'Hidden' ? 0 : 0.9,
             interactive: c['Marker'] === 'Hidden' ? false : true,
@@ -411,13 +417,13 @@ $(window).on('load', function () {
       .html("\
       #narration, #title {\
         background-color: " + trySetting('_narrativeBackground', 'white') + "; \
-        color: " + trySetting('_narrativeText', 'black') + "; \
+        color: " + trySetting('_narrativeText', 'white') + "; \
       }\
       a, a:visited, a:hover {\
-        color: " + trySetting('_narrativeLink', 'blue') + " \
+        color: " + trySetting('_narrativeLink', 'white') + " \
       }\
       .in-focus {\
-        background-color: " + trySetting('_narrativeActive', '#f0f0f0') + " \
+        background-color: " + trySetting('_narrativeActive', '#4b687b') + " \
       }")
       .appendTo("head");
 
