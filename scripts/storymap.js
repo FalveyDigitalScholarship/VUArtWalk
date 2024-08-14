@@ -442,7 +442,7 @@ $(window).on('load', function () {
         markers[i].addTo(map);
         markers[i]['_pixelsAbove'] = pixelsAbove[i];
         markers[i].on('click', function() {
-          var pixels = parseInt($(this)[0]['_pixelsAbove']) + 5 + 50;
+          var pixels = parseInt($(this)[0]['_pixelsAbove']) + 5;
           $('div#contents').animate({
             scrollTop: pixels + 'px'});
         });
