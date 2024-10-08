@@ -146,6 +146,11 @@ $(window).on('load', function () {
     var overlay;  // URL of the overlay for in-focus chapter
     var geoJsonOverlay;
 
+    var paintinggroup = [];
+    var sculpturegroup = [];
+    var religiousgroup = [];
+
+
     for (i in chapters) {
       var c = chapters[i];
 
@@ -160,19 +165,24 @@ $(window).on('load', function () {
         else if (c['Marker'] === "Religious") className = "extra-marker-religious";
         else if (c['Marker'] === "Gallery") className = "extra-marker-gallery";
 
-        markers.push(
-          L.marker([lat, lon], {
-            icon: L.ArtMarkers.icon({
-              icon: 'fa-number',
-              number: c['Marker'] === 'Plain' ? '' : chapterCount,
-              markerColor: c['Marker Color'] || 'blue',
-              className: className || "extra-marker-painting"
-            }),
-            opacity: c['Marker'] === 'Hidden' ? 0 : 0.9,
-            interactive: c['Marker'] === 'Hidden' ? false : true,
+        newmarker = L.marker([lat, lon], {
+          icon: L.ArtMarkers.icon({
+            icon: 'fa-number',
+            number: c['Marker'] === 'Plain' ? '' : chapterCount,
+            markerColor: c['Marker Color'] || 'blue',
+            className: className || "extra-marker-painting"
+          }),
+          opacity: c['Marker'] === 'Hidden' ? 0 : 0.9,
+          interactive: c['Marker'] === 'Hidden' ? false : true,
           }
-        ));
+        );
 
+        if (c['Marker'] === "Sculpture") sculpturegroup.push(newmarker);
+        else if (c['Marker'] === "Religious") religiousgroup.push(newmarker);
+        else if (c['Marker'] === "Gallery") paintinggroup.push(newmarker);
+        else paintinggroup.push(newmarker);
+
+        markers.push(newmarker);
       } else {
         markers.push(null);
       }
@@ -220,6 +230,8 @@ $(window).on('load', function () {
         }).append(media).after(source);
       }
 
+
+
       // If not YouTube: either audio or image
       var mediaTypes = {
         'jpg': 'img',
@@ -263,13 +275,26 @@ $(window).on('load', function () {
         .append('<p class="chapter-header">' + c['Chapter'] + '</p>')
         .append(media ? mediaContainer : '')
         .append(media ? source : '')
-        .append('<p class="description">' + c['Description'] + '</p>');
+        .append(c['Description']);
 
       $('#contents').append(container);
 
        }
 
     changeAttribution();
+
+    //New layers for Facet Control
+     var paintinglayer = L.layerGroup(paintinggroup);
+     var sculpturelayer = L.layerGroup(sculpturegroup);
+     var religiouslayer = L.layerGroup(religiousgroup);
+
+     var overlayMaps = {
+      "Painting": paintinglayer, "Sculpture": sculpturelayer, "Religious": religiouslayer
+     };
+
+     var layerControl = L.control.layers(null,overlayMaps).addTo(map);
+
+    $("input:checkbox").trigger('click').prop('checked', true);
 
     /* Change image container heights */
     imgContainerHeight = parseInt(getSetting('_imgContainerHeight'));
@@ -303,7 +328,7 @@ $(window).on('load', function () {
         ) {
 
          // Update URL hash
-        location.hash = i + 2;
+        location.hash = i + 1;
 
           // Remove styling for the old in-focus chapter and
           // add it to the new active chapter
